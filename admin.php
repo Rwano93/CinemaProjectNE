@@ -14,7 +14,7 @@
         <label for="utilisateur">Choisissez un utilisateur :</label>
         <select id="utilisateur" name="utilisateur">
             <?php
-            $bdd = new PDO('mysql:host=localhost;dbname=erwan_site;charset=utf8', 'root', '');
+            $bdd = new PDO('mysql:host=localhost;dbname=cinemaproject;charset=utf8', 'root', '');
             $requete = "SELECT id_user, nom, email, date FROM user"; 
             
             $resultat = $bdd->query($requete);
@@ -38,7 +38,7 @@
             $idUtilisateurASupprimer = $_POST['utilisateur'];
 
 
-            $bdd = new PDO('mysql:host=localhost;dbname=erwan_site;charset=utf8', 'root', '');
+            $bdd = new PDO('mysql:host=localhost;dbname=cinemaproject;charset=utf8', 'root', '');
             $requeteSuppression = "DELETE FROM user WHERE id_user = ?";
             $statement = $bdd->prepare($requeteSuppression);
             $statement->execute([$idUtilisateurASupprimer]);
